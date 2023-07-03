@@ -41,3 +41,22 @@ jobs:
         python -m flake8 backend/
         cd backend/
         python manage.py test
+
+  frontend_tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up nodeJS
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Install dependencies
+      run: |
+        cd frontend/
+        npm ci
+
+    - name: Test frontend
+      run: |
+        cd frontend/
+        npm run test
