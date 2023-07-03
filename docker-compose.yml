@@ -14,24 +14,24 @@ services:
     volumes:
       - kittygram_pg_data:/var/lib/postgresql/data
   backend:
-    image: japrojah/kittygram_backend:latest
+    build: ./backend/
     env_file: .env
     depends_on:
       - db
     volumes:
       - static:/backend_static
-      - media:/app/media
+      - media:/media
   frontend:
     env_file: .env
-    image: japrojah/kittygram_frontend:latest
+    build: ./frontend/
     command: cp -r /app/build/. /static/
     volumes:
       - static:/static
   gateway:
-    image: japrojah/kittygram_gateway:latest
+    build: ./nginx/
     env_file: .env
     volumes:
       - static:/staticfiles/
-      - media:/app/media
+      - media:/media
     ports:
       - 9000:80

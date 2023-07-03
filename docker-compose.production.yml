@@ -20,7 +20,7 @@ services:
       - db
     volumes:
       - static:/backend_static
-      - media:/app/media
+      - media:/media
   frontend:
     env_file: .env
     image: japrojah/kittygram_frontend:latest
@@ -32,7 +32,7 @@ services:
     env_file: .env
     volumes:
       - static:/staticfiles/
-      - media:/app/media
+      - media:/media
     ports:
       - 9000:80
 
