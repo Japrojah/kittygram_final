@@ -1,5 +1,5 @@
 version: '3'
-
+  
 volumes:
   kittygram_pg_data:
   static:
