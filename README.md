@@ -84,8 +84,11 @@ sudo nginx -t
 sudo systemctl start nginx
 
 ## Примеры запросов:
-'https://example.com/' - главная страница
-'https://example.com/api' - страница с документацией и примерами запросов к Api проекта
-'https://example.com/admin' - страница для администрирования приложения, чтобы войти укажите user_name & password, который указывали при создании superuser
+'https://example.com/' - главная страница;
+'https://example.com/api' - страница с документацией и примерами запросов к Api проекта;
+'https://example.com/api/cats/' - Cat List, список со всеми котиками;
+'https://example.com/api/achievements/' - Achievement List, список всех достижений;
+'https://example.com/api/users/' -User List, форма для регистрации;
+'https://example.com/admin' - страница для администрирования приложения, чтобы войти укажите user_name & password, который указывали при создании superuser;
 Обратите внимаение - 'example.com' обозначены ваше доменное имя или IP-адрес сервера, на котором вы запускаете приложение.
 
